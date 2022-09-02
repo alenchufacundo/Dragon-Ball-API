@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+  background-color: beige;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding-bottom: 30px;
+}
+
+.search {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cardsContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.875rem;
+}
+
+.card {
+  display: flex;
+  width: 250px;
+  height: 450px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9375rem;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 1.875rem;
+  padding-bottom: 1.25rem;
+}
+
+.card__figure {
+  width: 100%;
+  height: 30%;
+  background-image: url(../images/dragonBallFondo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-top-left-radius: 1.875rem;
+  border-top-right-radius: 1.875rem;
+}
+
+.card__figure--character {
+  width: 200px;
+  height: 200px;
+  border-radius: 6.25rem;
+}
+
+.card__description{
+    font-size: 1.25rem;
+}
