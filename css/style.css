@@ -190,3 +190,11 @@ body{
 .card:hover .back {
   transform: perspective(600px) rotateY(360deg);
 }
+
+
+/* Media queries */
+@media (min-width: 768px){
+  .card{
+    height:700px;
+  }
+}
