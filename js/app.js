@@ -49,20 +49,46 @@ const cleanHtml = () => {
   cards.innerHTML = "";
 }
 
-// //loading function
-// const loading = () => {
-//   load.innerHTML = 
-//   `
-  
-//   `
-// }
+//loading function
+const loading = () => {
+
+  load.style.display="inline";
+  let numimggoku=1;
+      let maximggoku=2;
+      setInterval(change_img,150);
+      function change_img(){
+        numimggoku++;
+        if (numimggoku>maximggoku) {
+          numimggoku=1;
+        }
+        document.getElementById("imgcontent1").src="images/goku"+numimggoku+".png";
+      }
+      let numimgsopa=1;
+      let maximgsopa=8;
+      setInterval(change_img2,600);
+      function change_img2(){
+        numimgsopa++;
+        if (numimgsopa>maximgsopa) {
+          numimgsopa=1;
+        }
+        document.getElementById("imgcontent2").src="images/sopa"+numimgsopa+".png";
+      }
+}
+
+const hideLoading = () => {
+  load.style.display="none";
+}
+
 
 
 //Add function to the button
 btnSearch.addEventListener("click", () => {
   if (inputSearch.value != "") {
     cleanHtml();
-    // loading()
+    loading();
+    setTimeout(() => {
+      hideLoading();
+    }, 3000);
     getCharacters(inputSearch.value);
   } else {
     alert("debes ingresar un nombre");
