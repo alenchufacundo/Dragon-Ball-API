@@ -4,13 +4,13 @@ const URL = "https://dragon-ball-super-api.herokuapp.com/api/characters";
 const cards = document.getElementById("cards");
 const load = document.getElementById("load");
 
+
 //Fetch function
 const getCharacters = async (nameOfCharacter) => {
-  try{
-
+  try {
     const response = await fetch(URL);
     const data = await response.json();
-  
+
     for (const key in data) {
       const element = data[key];
       const names = element.name.toLowerCase();
@@ -34,51 +34,54 @@ const getCharacters = async (nameOfCharacter) => {
           </div>
       </div>
           `;
-        }, 3000);
-    
+        }, 4000);
       }
     }
-  }
-  catch(error){
-    console.log(error)
+  } catch (error) {
+    console.log(error);
   }
 };
 
 //Clean function
 const cleanHtml = () => {
   cards.innerHTML = "";
-}
+};
+
 
 //loading function
+let intervalId;
+let intervalId_2;
+
 const loading = () => {
 
-  load.style.display="inline";
-  let numimggoku=1;
-      let maximggoku=2;
-      setInterval(change_img,150);
-      function change_img(){
-        numimggoku++;
-        if (numimggoku>maximggoku) {
-          numimggoku=1;
-        }
-        document.getElementById("imgcontent1").src="images/goku"+numimggoku+".png";
-      }
-      let numimgsopa=1;
-      let maximgsopa=8;
-      setInterval(change_img2,600);
-      function change_img2(){
-        numimgsopa++;
-        if (numimgsopa>maximgsopa) {
-          numimgsopa=1;
-        }
-        document.getElementById("imgcontent2").src="images/sopa"+numimgsopa+".png";
-      }
-}
+  load.style.display = "inline";
+  let numimggoku = 1;
+  let maximggoku = 2;
+  intervalId = setInterval(change_img, 150);
+  function change_img() {
+    numimggoku++;
+    if (numimggoku > maximggoku) {
+      numimggoku = 1;
+    }
+    document.getElementById("imgcontent1").src =
+      "images/goku" + numimggoku + ".png";
+  }
+  let numimgsopa = 1;
+  let maximgsopa = 8;
+  intervalId_2 = setInterval(change_img2, 600);
+  function change_img2() {
+    numimgsopa++;
+    if (numimgsopa > maximgsopa) {
+      numimgsopa = 1;
+    }
+    document.getElementById("imgcontent2").src =
+      "images/sopa" + numimgsopa + ".png";
+  }
+};
 
 const hideLoading = () => {
-  load.style.display="none";
-}
-
+  return load.style.display = "none";
+};
 
 
 //Add function to the button
@@ -88,7 +91,9 @@ btnSearch.addEventListener("click", () => {
     loading();
     setTimeout(() => {
       hideLoading();
-    }, 3000);
+      clearInterval(intervalId);
+      clearInterval(intervalId_2);
+    }, 4000);
     getCharacters(inputSearch.value);
   } else {
     alert("debes ingresar un nombre");

@@ -94,7 +94,7 @@ body{
 
 .content-img{
   position: absolute;
-  height: 30%;
+  height: 26%;
   bottom: 10px;
   left: 35px;
 }
@@ -107,7 +107,6 @@ body{
   bottom: 50%;
   right: 15%;
 }
-
 
 /* Card */
 .card {
@@ -136,7 +135,7 @@ body{
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: center;
+  object-fit: contain;
 }
 
 .card .front h3 {
@@ -192,9 +191,33 @@ body{
 }
 
 
+.footer{
+  
+}
+
+
 /* Media queries */
+
+
+
+@media (min-width:375px){
+  .content-img{
+    left: 50px;
+  }
+}
+
+@media (min-width:425px){
+  .content-img{
+    left: 90px;
+  }
+}
+
 @media (min-width: 768px){
   .card{
-    height:700px;
+    height:700px
+  }
+
+  .content-img{
+    left: 40px;
   }
 }
