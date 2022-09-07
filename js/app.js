@@ -28,7 +28,7 @@ const getCharacters = async (nameOfCharacter) => {
               <br>Raza: ${element.specie}</br>
               Estado: ${element.status}</br>
               Universo: ${element.universe}</br>
-              Role: ${element.role}</br>
+              Rol: ${element.role}</br>
               Planeta de origen: ${element.originplanet}</br>
             </p>
           </div>
