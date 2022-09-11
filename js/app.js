@@ -1,5 +1,5 @@
 const inputSearch = document.getElementById("input-search");
-const btnSearch = document.getElementById("btn-search");
+// const btnSearch = document.getElementById("btn-search");
 const URL = "https://dragon-ball-super-api.herokuapp.com/api/characters";
 const cards = document.getElementById("cards");
 const load = document.getElementById("load");
@@ -85,8 +85,9 @@ const hideLoading = () => {
 
 
 //Add function to the button
-btnSearch.addEventListener("click", () => {
-  if (inputSearch.value != "") {
+inputSearch.addEventListener("keyup", (event) => {
+
+  if (event.code == "Enter") {
     cleanHtml();
     loading();
     setTimeout(() => {
@@ -95,7 +96,5 @@ btnSearch.addEventListener("click", () => {
       clearInterval(intervalId_2);
     }, 4000);
     getCharacters(inputSearch.value);
-  } else {
-    alert("debes ingresar un nombre");
   }
 });

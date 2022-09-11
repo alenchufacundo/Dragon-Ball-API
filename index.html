@@ -8,6 +8,7 @@
     <title>Dragon Ball Super</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -20,14 +21,24 @@
             Esta es una web donde podras encontrar todos los personajes con su respectiva informacion de la saga animada: Dragon Ball Super
           </p>
           <p class="search__paragraph search--only">Utiliza el buscador que se encuentra debajo</p>
-          <input
+          <div class="box">
+            <input type="checkbox" id="check">
+            <div class="search-box">
+              <input id="input-search" type="text" placeholder="Presiona enter para buscar...">
+              <label for="check" class="icon">
+                <i class="fas fa-search"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- <input
             class="search__input"
             type="text"
             id="input-search"
             required
             placeholder="Introduce el nombre de un personaje"
           />
-          <button class="search__button" id="btn-search">Buscar</button>
+          <button class="search__button" id="btn-search">Buscar</button> -->
         </article>
           <!-- Loader -->
           <article class="load" id="load">
